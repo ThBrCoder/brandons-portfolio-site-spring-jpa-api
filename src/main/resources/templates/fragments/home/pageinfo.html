@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div th:fragment="pageinfoElement" id="pageinfoElement">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="pageinfo">
+      <div class="w-100">
+        <h2 class="mb-5">Page Info</h2>
+		Thank you for visiting! I built this site using Amazon Web Services, Spring Boot, Thymeleaf and Bootstrap.
+		<br><br>
+		<a href="https://aws.amazon.com/what-is-cloud-computing" class="col-2 col-sm-2 col-md-2 col-lg-2"><img src="https://d0.awsstatic.com/logos/powered-by-aws.png" alt="Powered by AWS Cloud Computing"></a> 
+		<a href="https://www.spring.io"><img src="logos/spring_boot_3.png" class="col-2 col-sm-2 col-md-1 col-lg-1" alt="Powered by spring.io"></a> 
+		<a href="https://www.thymeleaf.org"><img src="logos/thymeleaf.png" class="col-2 col-sm-2 col-md-1 col-lg-1" alt="Powered by Thymeleaf"></a> 
+		<a href="https://www.getbootstrap.com"><img th:src="@{/logos/bootstrap-logo-vector-png.jpg}" class="col-2 col-sm-2 col-md-1 col-lg-1" alt="Powered by Bootstrap"></a> 	
+      </div>
+    </section>
+</div>
+</body>
+</html>

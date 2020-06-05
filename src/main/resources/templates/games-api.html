@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Brandon Theisen's Resume Site</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/resume.css}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Brandon Theisen</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">&lt;&lt; Back</a>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#instructions">Instructions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#preview">Preview</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="instructions">
+      <div class="w-100">
+        <h2 class="mb-5">Instructions</h2>
+        
+        <p class="mb-0">The REST API can be accessed using Postman through: www.brandontheisen.com/api/games</p><br>
+        <p class="mb-0">This is a simple Games API which exposes a list of some Nintendo 64 games. Supports GET, POST, PUT and DELETE HTTP requests. Only 10 games can be stored in the API list at a time, and the game's title and year must be valid.</p><br>
+        <p class="mb-0">Click <a href="/api/games">here</a> to view the current games stored in the API list.</p><br>
+        <p class="mb-0">The following list shows valid games that can be inserted/updated:</p>
+        <br>
+        <ul>
+        	<li>{ "title" : "The Legend of Zelda: Ocarina of Time", "year" : 1998 }</li>
+        	<li>{ "title" : "Mystical Ninja Starring Goemon", "year" : 1997 }</li>
+        	<li>{ "title" : "Doom 64", "year" : 1997 }</li>
+        	<li>{ "title" : "Super Mario 64", "year" : 1996 }</li>
+        	<li>{ "title" : "007 Goldeneye", "year" : 1997 }</li>
+        	<li>{ "title" : "Resident Evil 2", "year" : 1999 }</li>
+        	<li>{ "title" : "Quest 64", "year" : 1998 }</li>
+        	<li>{ "title" : "Pilotwings 64", "year" : 1996 }</li>
+        	<li>{ "title" : "Mario Kart 64", "year" : 1996 }</li>
+        	<li>{ "title" : "Diddy Kong Racing", "year" : 1997 }</li>
+        	<li>{ "title" : "Yoshi's Story", "year" : 1997 }</li>
+        	<li>{ "title" : "Road Rash 64", "year" : 1999 }</li>
+        	<li>{ "title" : "Star Fox 64", "year" : 1997 }</li>
+        	<li>{ "title" : "Super Smash Bros.", "year" : 1999 }</li>
+        	<li>{ "title" : "Bomberman 64", "year" : 1997 }</li>
+        	<li>{ "title" : "Cruis'n USA", "year" : 1996 }</li>
+        	<li>{ "title" : "Banjo-Kazooie", "year" : 1998 }</li>
+        	<li>{ "title" : "Perfect Dark", "year" : 2000 }</li>
+        	<li>{ "title" : "Mega Man 64", "year" : 2001 }</li>
+        	<li>{ "title" : "Mischief Makers", "year" : 1997 }</li>
+        </ul>
+        <br>
+        <p class="mb-0">The full supported JSON format for Game requests is: { "id" : int, "title" : "string", "year" : int }</p><br>
+        <p class="mb-0">When performing a PUT request, you can change the game to another title. The title and year must be correct according to the list above, otherwise the change will not succeed.</p><br>
+      	<p class="mb-0">UI is currently in progress and will be coming soon... See screenshot below for a preview.</p><br>
+      </div>
+    </section>  
+    
+    
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="preview">
+      <div class="w-100">
+        <h2 class="mb-5">Preview Screenshot</h2>
+			<img th:src="@{/img/demo-screenshot.png}" class="img-fluid" style="min-width: 50%; min-height: 50%;" alt="Responsive image">        
+      </div>
+    </section>  
+  
+  <!-- Bootstrap core JavaScript -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/js/resume.min.js"></script>
+  
+</body>
+</html>

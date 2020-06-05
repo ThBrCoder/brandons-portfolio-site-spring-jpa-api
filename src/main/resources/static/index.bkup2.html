@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Brandon Theisen's Resume Site</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Brandon Theisen</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#pageinfo">Page Info</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Brandon
+          <span class="text-primary">Theisen</span>
+        </h1>
+        <div class="subheading mb-5"><!--3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 · -->
+          <a href="mailto:name@email.com">theisen.brandon@outlook.com</a>
+        </div>
+        <p class="lead mb-5">I am a self-motivating, versatile Java developer that has experience with microservices and maintaining large-scale J2EE applications. Utilized agile methodology and self-taught skills to provide solutions and value to the business.</p>
+        <p>Connect with me on LinkedIn!</p>
+		<div class="social-icons">
+          <a href="https://www.linkedin.com/in/brandont15/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!--<section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">-->
+	<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experience</h2>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Software Developer</h3>
+            <div class="subheading mb-3">Tata Consultancy Services</div>
+            <!--<p>Provided solutions developing and maintaining Soap API code used for vendor products. Administrated and provided support for report repositories. Executed setting up disaster recovery environment while coordinating with various in-house teams. Developed BIRT Reports to provide detailed analytics using tables and graphs. Maintained client’s large-scale J2EE batch and UI applications to add enhancements and resolve defects. Developed microservice Spring Batch applications to load file data into Oracle database and exposed views for consumption by other applications. Utilized ClearCase and Git for source control.</p>-->
+			<ul>
+				<li>Provided solutions developing and maintaining Soap API code used for vendor products.</li>
+				<li>Administrated and provided support for report repositories. Executed setting up disaster recovery environment while coordinating with various in-house teams.</li>
+				<li>Developed BIRT Reports to provide detailed analytics using tables and graphs.</li>
+				<li>Maintained large-scale J2EE batch and UI applications to add enhancements and resolve defects.</li>
+				<li>Developed microservice Spring Batch applications to load file data into Oracle database and exposed views for consumption by other applications.</li>
+				<li>Coordinated with testers and other developers within team to verify enhancements/fixes of Java applications.</li>
+				<li>Created documentation for setup instructions, known issues with solutions, code and test cases.</li>
+				<li>Utilized ClearCase and Git for source control.</li>
+			</ul>
+		  </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">June 2015 - Present</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Education</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">St. Cloud State University</h3>
+            <div class="subheading mb-3">Bachelor of Science</div>
+            <div>Computer Science</div>
+			<ul>
+				<li>Cum Laude with GPA: 3.44</li>
+				<li>Pursued learning more about object-oriented programming with Java and using design patterns.</li>
+				<li>Constructed an Oracle database for a project using SQL.</li>
+				<li>Developed a Java application for a project provided by Sogeti to give us experience with fulfilling deliverables.</li>
+			</ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">August 2012 - May 2015</span>
+          </div>
+        </div>
+		
+		<div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Anoka-Ramsey Community College</h3>
+            <div class="subheading mb-3">Associate of Science</div>
+            <div>Computer Science</div>
+			<ul>
+				<li>Started learning about object-oriented programming using C++ and Java.</li>
+				<li>Joined the Computer Science club in 2011 and 2012.</li>
+				<li>Assisted writing algorithms for a robot to navigate a maze for a programming competition sponsored by Digikey.</li>
+			</ul>			
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">August 2008 - May 2012</span>
+          </div>
+        </div>
+
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Coon Rapids High School</h3>
+			<div class="subheading mb-3">High School Diploma</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">August 2004 - May 2008</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+		<div class="w-100">
+			<h2 class="mb-5">Skills</h2>
+			<!--<ul class="a-ul mb-0">-->
+			<div id="container1" class="d-inline-block mr-5">
+				<ul class="a-ul mb-0">
+					<li>Java</li>
+					<li>Spring Boot</li>
+					<li>Actuate / BIRT Reporting Tools</li>
+					<li>Google Web Toolkit (GWT)</li>
+					<li>JavaScript / jQuery</li>
+					<li>IBM WebSphere</li>
+					<li>IBM ClearCase</li>
+					<li>HTML / CSS</li>
+					<li>MyBatis</li>
+				</ul>
+			</div>
+			<div id="container2" class="d-inline-block mr-5">
+				<ul class="a-ul mb-0">
+					<li>Oracle SQL</li>
+					<li>Unix</li>
+					<li>Apache Tomcat</li>
+					<li>Microsoft Word / Excel</li>
+					<li>Visio</li>
+					<li>VersionOne</li>
+					<li>ServiceNow</li>
+					<li>Sharepoint</li>
+					<li>Confluence</li>
+				</ul>
+			</div>
+			<br><br>
+        <div class="subheading mb-3">Workflow</div>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Cross-Functional</li>
+		  <li>
+            <i class="fa-li fa fa-check"></i>
+            Support and Maintenance</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Agile Development &amp; Scrum</li>
+        </ul>
+      </div>			
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+      <div class="w-100">
+        <h2 class="mb-5">Interests</h2>
+        <p>In my spare time from being a Java developer, I like to watch movies, funny YouTube videos, and collecting video games. One of the systems I enjoy playing the most is my old, trusty Nintendo 64.</p>
+        <p class="mb-0">The most daunting task I have ever accomplished was plan my first trip out of the country, without a guide, to Japan in 2019. It lasted for two weeks, and I visited Tokyo, Hakone, Kyoto, Osaka, Ise, Nara and Nagoya. It took a lot of planning, and a lot of navigation help from Google Maps.</p>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+	<!-- Insert page info thymeleaf page here -->
+	<div th:replace="/fragments/pageinfo :: pageinfo"></div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
