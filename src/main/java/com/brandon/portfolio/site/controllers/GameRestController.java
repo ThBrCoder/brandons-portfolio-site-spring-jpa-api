@@ -3,9 +3,9 @@ package com.brandon.portfolio.site.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.brandon.portfolio.site.cnst.Constants;
 import com.brandon.portfolio.site.entity.GamesDisplayList;
 import com.brandon.portfolio.site.exception.GameNotFoundException;
+import com.brandon.portfolio.site.response.GameSuccessResponse;
 import com.brandon.portfolio.site.service.GamesServiceImpl;
 
+@CrossOrigin
 @RestController // May need to reset to normal Controller instead of REST controller (?)
 @RequestMapping("/api")
 public class GameRestController {
@@ -53,7 +55,7 @@ public class GameRestController {
 	
 	// Delete a game
 	@DeleteMapping("/games/{gameId}")
-	public synchronized String deleteGame(@PathVariable int gameId) {
+	public synchronized GameSuccessResponse deleteGame(@PathVariable int gameId) {
 		
 		GamesDisplayList game = gamesServiceImpl.findGameById(gameId);
 		
@@ -62,8 +64,10 @@ public class GameRestController {
 		}
 		
 		gamesServiceImpl.deleteGame(gameId);
-		
-		return "Game deleted - id: " + gameId;
+
+		return new GameSuccessResponse(200,
+				"Successfully deleted id: " + gameId, 
+				System.currentTimeMillis());
 	}
 	
 	
@@ -71,21 +75,22 @@ public class GameRestController {
 	// Need to test case for request with additional unnecessary parameters in json body postman
 	//public synchronized String addGame(@ModelAttribute("game") GamesDisplayList game) {
 	@PostMapping("/games")
-	public synchronized String addGame(@RequestBody GamesDisplayList game) {
+	public synchronized GameSuccessResponse addGame(@RequestBody GamesDisplayList game) {
 	
 		
 		game.setId(Constants.NEW_ITEM_ID);
 		gamesServiceImpl.saveGame(game);
 		
-		return "Game added - " + game.getTitle() + " " + game.getYear();
-		// return "redirect:/games-api.html";
+		return new GameSuccessResponse(200, 
+				"Successfully added game: " + game.getTitle() + " - " + game.getYear(), 
+				System.currentTimeMillis());
 	}
 	
 
 	
 	// Update game info
 	@PutMapping("/games")
-	public synchronized String updateGame(@RequestBody GamesDisplayList game) {
+	public synchronized GameSuccessResponse updateGame(@RequestBody GamesDisplayList game) {
 
 		GamesDisplayList checkGame = gamesServiceImpl.findGameById(game.getId());
 		if(checkGame == null) {
@@ -94,6 +99,8 @@ public class GameRestController {
 
 		gamesServiceImpl.saveGame(game);
 		
-		return "Game updated - id: " + game.getId();
+		return new GameSuccessResponse(200, 
+				"Successfully updated game: " + game.getId() + " - " + game.getTitle() + " - " + game.getYear(),
+				System.currentTimeMillis());
 	}	
 }

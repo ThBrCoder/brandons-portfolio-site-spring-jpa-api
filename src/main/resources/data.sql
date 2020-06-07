@@ -31,3 +31,7 @@ INSERT INTO `GAMES_DISPLAY_LIST` VALUES
 	(7,'Quest 64',1998),
 	(8,'Pilotwings 64',1996),
 	(9,'Mario Kart 64',1996);
+	
+INSERT INTO `USERS` VALUES 
+	(1,'Admin','abc123','Role_Administrator'),
+	(2,'User','abc123','Role_User');
