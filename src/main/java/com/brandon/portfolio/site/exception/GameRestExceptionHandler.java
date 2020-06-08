@@ -65,8 +65,8 @@ public class GameRestExceptionHandler {
 		// Create GameErrorResponse
 		GameErrorResponse error = new GameErrorResponse(
 			HttpStatus.BAD_REQUEST.value(),
-			// e.getMessage(),
-			"Error: Bad Request. Please re-check the request and try again.",
+			e.getMessage(),
+			// "Error: Bad Request. Please re-check the request and try again.",
 			System.currentTimeMillis()
 		);
 		

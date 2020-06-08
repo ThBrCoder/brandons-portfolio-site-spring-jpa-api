@@ -3,6 +3,8 @@ package com.brandon.portfolio.site.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brandon.portfolio.site.cnst.Constants;
@@ -33,6 +36,12 @@ public class GameRestController {
 		this.gamesServiceImpl = gamesServiceImpl;
 	}	
 	
+	/*
+	@RequestMapping(value="/games",method=RequestMethod.OPTIONS)
+	public ResponseEntity<?> collectionOptions() {
+		return ResponseEntity.ok().allow(HttpMethod.GET,HttpMethod.POST,HttpMethod.PUT,HttpMethod.OPTIONS).build();
+	}
+	*/
 	// Get a list of games
 	@GetMapping("/games")
 	public List<GamesDisplayList> getAllGames() {
