@@ -32,6 +32,30 @@ INSERT INTO `GAMES_DISPLAY_LIST` VALUES
 	(8,'Pilotwings 64',1996),
 	(9,'Mario Kart 64',1996);
 	
-INSERT INTO `USERS` VALUES 
-	(1,'Admin','abc123','Role_Administrator'),
-	(2,'User','abc123','Role_User');
+--INSERT INTO `USERS` VALUES 
+	--(1,'Admin','{noop}abc123','Role_Administrator'),
+	--(2,'User','{noop}abc123','Role_User');
+	
+	
+
+--
+-- Inserting data for table `users`
+--
+
+INSERT INTO `users` 
+VALUES 
+('admin','{noop}pass',1),
+('user','{noop}pass2',1);
+
+
+--
+-- Inserting data for table `authorities`
+--
+
+INSERT INTO `authorities` 
+VALUES 
+('admin','ROLE_ADMINISTRATOR'),
+('user','ROLE_USER');
+
+
+	
