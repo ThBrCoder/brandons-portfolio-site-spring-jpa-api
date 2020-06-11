@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 // import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,21 +19,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.brandon.portfolio.site.entity.Token;
 import com.brandon.portfolio.site.entity.User;
+import com.brandon.portfolio.site.service.UserServiceImpl;
 import com.brandon.portfolio.site.util.JwtUtil;
 
 @RestController
 @CrossOrigin
 public class UserController {
 	
-	@Autowired 
+	
 	private JwtUtil jwtUtil;
+	private AuthenticationManager authenticationManager;
+	private UserServiceImpl userServiceImpl;
 	
 	@Autowired
-	private AuthenticationManager authenticationManager;
+	public UserController(AuthenticationManager authenticationManager, 
+			JwtUtil jwtUtil,
+			UserServiceImpl userServiceImpl) {
+		this.jwtUtil = jwtUtil;
+		this.authenticationManager = authenticationManager;
+		this.userServiceImpl = userServiceImpl;
+	}
+	
 
-    @RequestMapping("/login")
+	/*
+    @PostMapping("/login")
     public boolean login(@RequestBody User user) {
     //public Map<String, Boolean> login(@RequestBody User user) {
         boolean value = user.getUsername().equals("admin") && user.getPassword().equals("pass");
@@ -43,8 +54,9 @@ public class UserController {
     	//System.out.println("Auth == " + auth);
     	//return Collections.singletonMap("success", auth);
     }
+    */
     
-    
+	/*
     @RequestMapping("/user")
     public Principal user(HttpServletRequest request) {
 
@@ -54,13 +66,21 @@ public class UserController {
     	System.out.println("authToken == " + authToken);
     	return () -> new String(Base64.getDecoder().decode(authToken)).split(":")[0];
     }
+    */
     
     @GetMapping("/usertoken")
-    public boolean verifyToken(@RequestBody Token token) {
+    public Map<String,Boolean> verifyToken(HttpServletRequest request) {	
+
+    	String authToken = request.getHeader("Authorization").toString().substring("Bearer".length()).trim();
+
     	
-    	System.out.println(token.getToken());
-    	
-    	return true;
+    	String username = jwtUtil.extractUsername(authToken);
+    	UserDetails userCredentials = userServiceImpl.loadUserByUsername(username);
+    	Boolean isValidToken = jwtUtil.validateToken(authToken, userCredentials);
+
+    	Map<String,Boolean> tokenValidity = new HashMap<String,Boolean>();
+    	tokenValidity.put("tokenValidity", isValidToken);
+    	return tokenValidity;
     }
     
     @PostMapping("/authenticate")

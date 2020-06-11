@@ -52,6 +52,7 @@ public class AuthSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/login").permitAll()
 			.antMatchers("/user").permitAll()
 			.antMatchers("/authenticate").permitAll()
+			.antMatchers("/usertoken").permitAll()
 			// .antMatchers("/api/games").permitAll()
 			// .antMatchers("/").permitAll()
 			// .antMatchers(HttpMethod.OPTIONS,"/api/games").authenticated()
