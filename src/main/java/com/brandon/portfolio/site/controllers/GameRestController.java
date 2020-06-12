@@ -23,7 +23,7 @@ import com.brandon.portfolio.site.response.GameSuccessResponse;
 import com.brandon.portfolio.site.service.GamesServiceImpl;
 
 @CrossOrigin
-@RestController // May need to reset to normal Controller instead of REST controller (?)
+@RestController 
 @RequestMapping("/api")
 public class GameRestController {
 	

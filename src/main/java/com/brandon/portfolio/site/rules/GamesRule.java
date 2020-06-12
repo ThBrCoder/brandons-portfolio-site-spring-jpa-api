@@ -2,6 +2,8 @@ package com.brandon.portfolio.site.rules;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -62,15 +64,17 @@ public class GamesRule {
 			return false;
 		}
 
-		for(GamesMasterList rule : gamesMasterList) {
-			if(rule.getYear() == game.getYear() 
-					&& rule.getTitle().equalsIgnoreCase(game.getTitle())) {
-				game.setTitle(rule.getTitle()); // Fix casing of title
+		Optional<GamesMasterList> validGame = Optional.ofNullable(gamesMasterList.stream().filter(value -> 
+			value.getTitle().equals(game.getTitle()) 
+			&& value.getYear() == game.getYear()).findFirst().orElse(null));
 
-				return true; 					// Yes, there is a match
-			}
+		validGame.ifPresent(presentGame -> game.setTitle(presentGame.getTitle()));
+		
+		if(validGame.isPresent()) {
+			
+			return true;
 		}
-
+		
 		return false;
 	}
 }
